@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CounterLeave</string>
+    <string name="leave_label">Enter leave date</string>
+    <string name="back_label">Back</string>
+    <string name="save_label">Save</string>
+    <string name="count_text">Welcome to Countdown</string>
+    <string name="date_label">Date</string>
+    <string name="time_remain">Time remaining:</string>
+    <string name="finished">Finished! Enjoy the LIFE!</string>
+    <string name="enter_label">Add leaving date (DD/MM/YYYY):</string>
+</resources>
