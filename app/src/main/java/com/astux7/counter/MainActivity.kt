@@ -10,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.astux7.counter.navigation.Directions
 import com.astux7.counter.navigation.buildTheGraph
-import com.astux7.counter.ui.theme.CounterLeaveTheme
+import com.astux7.counter.ui.theme.KickoffTheme
 
 
 class MainActivity : ComponentActivity() {
@@ -18,9 +18,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CounterLeaveTheme {
+            KickoffTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
+                Surface {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,

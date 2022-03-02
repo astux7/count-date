@@ -28,12 +28,7 @@ fun ContentWrapper(content: @Composable () -> Unit) {
         Column(
             modifier = Modifier
                 .border(2.dp, MaterialTheme.colors.primaryVariant)
-                .padding(
-                    start = 24.dp,
-                    top = 16.dp,
-                    end = 24.dp,
-                    bottom = 16.dp
-                ),
+                .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
@@ -41,5 +36,3 @@ fun ContentWrapper(content: @Composable () -> Unit) {
         }
     }
 }
-
-

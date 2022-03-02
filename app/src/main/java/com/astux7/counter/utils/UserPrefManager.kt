@@ -6,14 +6,17 @@ import android.content.Context.MODE_PRIVATE
 
 class UserPrefManager(application: Application) {
     // MY_PREFS_NAME - a static String variable like:
-    private val MY_PREFS_NAME = "MyLeaveDate"
+    private val MY_PREFS_NAME = "MyKickOffDate"
     private var sharedPref: SharedPreferences = application.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE)
 
-    fun save(text: String) {
+    fun save(date: String, text: String? = "") {
         val editor = sharedPref.edit()
-        editor.putString("date", text)
+        editor.putString("date", date)
+        editor.putString("text", text)
         editor.apply()
     }
 
-    fun read() = sharedPref.getString("date", "")
+    fun readDate() = sharedPref.getString("date", "")
+
+    fun readText() = sharedPref.getString("text", "")
 }
