@@ -14,36 +14,38 @@ import androidx.navigation.NavController
 import com.astux7.counter.R
 import com.astux7.counter.navigation.Directions
 import com.astux7.counter.components.ContentWrapper
-import com.astux7.counter.viewmodel.DateCounterViewModel
+import com.astux7.counter.viewmodel.DateCounterVM
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun HomePage(navController: NavController = NavController(LocalContext.current)) {
-    val vm: DateCounterViewModel = getViewModel()
+    val vm: DateCounterVM = getViewModel()
 
     ContentWrapper {
         if (vm.titleText.isNullOrBlank()) {
             Text(stringResource(id = R.string.welcome_text_label), color = Color.White)
         } else {
-            Text(stringResource(id = R.string.welcome_text_string_label, vm.titleText.orEmpty()), color = Color.White)
+            Text(
+                stringResource(id = R.string.welcome_text_string_label, vm.titleText.orEmpty()),
+                color = Color.White
+            )
         }
 
-        Spacer(modifier = Modifier
-            .fillMaxWidth()
-            .height(10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
-        if (vm.timeAdded.isNullOrBlank()) {
+        if (!vm.leftTime.value.isNullOrBlank())
+            Text(vm.leftTime.value.orEmpty(), textAlign = TextAlign.Center, color = Color.White)
+
+        if (vm.timeAdded.isNullOrBlank() || vm.timeEnded()) {
+
             Button(modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 5.dp, start = 20.dp, end = 20.dp, bottom = 5.dp),
+                .padding(top = 15.dp)
+                .heightIn(min = 50.dp),
                 onClick = { navController.navigate(Directions.enterDate.name) }) {
                 Text(text = stringResource(id = R.string.start_action))
             }
-        } else {
 
-            Text(stringResource(id = R.string.time_remain_label), color = Color.White)
-
-            Text(vm.leftTime.value.orEmpty(), textAlign = TextAlign.Center, color = Color.White)
         }
     }
 }

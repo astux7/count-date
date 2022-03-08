@@ -52,3 +52,11 @@ fun Long.showCountDownText() : String {
 
     return "$elapsedDays days $elapsedHours hours $elapsedMinutes minutes $elapsedSeconds seconds"
 }
+
+fun String.currentTimeDifference(): Long {
+    val currentTime = Calendar.getInstance().time
+    val format1 = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    val endDate = format1.parse(this)
+
+    return endDate.time - currentTime.time
+}

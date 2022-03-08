@@ -17,7 +17,7 @@ object Directions {
 
     val enterDate = object : NavigationCommand {
         override val name: String
-            get() = "enterDate"
+            get() = "enter_date"
         override val arguments: List<NamedNavArgument>
             get() = emptyList()
     }
