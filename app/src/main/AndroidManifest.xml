@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.astux7.counter">
-
+    package="com.basta.counter">
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
     <application
-        android:name=".CounterApplication"
+        android:name="com.basta.counter.CounterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CounterLeave">
+        <receiver android:name=".utils.MyNotification" android:enabled="true" />
         <activity
-            android:name="com.astux7.counter.MainActivity"
+            android:name="com.basta.counter.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.CounterLeave.NoActionBar">

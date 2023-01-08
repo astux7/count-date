@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.astux7.myapplication"
+        applicationId "com.basta.myapplication"
         minSdk 21
         targetSdk 31
         versionCode 1

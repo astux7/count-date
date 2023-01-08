@@ -4,7 +4,9 @@
     <string name="welcome_text_label">Welcome to Kick off</string>
     <string name="welcome_text_string_label">Welcome to %1$s Kick off</string>
     <string name="date_label">Date</string>
+    <string name="time_label">Time</string>
     <string name="select_date_hint">Select Date</string>
+    <string name="select_time_hint">Select Time</string>
     <string name="time_remain_label">Time remaining:\n %1$s</string>
     <string name="time_remain_text_label">Time remaining until Kick off:</string>
     <string name="finished_label">Congratulations! The time has passed, start a new Kick off!</string>
